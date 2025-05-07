@@ -29,7 +29,7 @@ def sorted_data(request):                                     #To return sorted 
 
         sorted_media = sorted(media_data, key=get_sum, reverse=True)       #Used Inbuilt sorting of python (TimSort- Time Complexity: O(nlogn))
 
-        return Response(sorted_media, status=status.HTTP_200_OK)
+        return Response(sorted_media)                                   
 
     except Exception as e:                                                 #Exception handling
         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)       #Returns the status code in case of error
